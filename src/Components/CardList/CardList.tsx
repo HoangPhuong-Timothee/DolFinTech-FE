@@ -5,12 +5,12 @@ import { v4 as uuidv4 } from "uuid";
 
 interface Props {
   searchResults: CompanySearch[];
-  onPortfolioCreate: (e: SyntheticEvent) => void;
+  onFavoriteCreate: (e: SyntheticEvent) => void;
 }
 
 const CardList: React.FC<Props> = ({
   searchResults,
-  onPortfolioCreate,
+  onFavoriteCreate,
 }: Props): JSX.Element => {
   return (
     <div>
@@ -21,7 +21,7 @@ const CardList: React.FC<Props> = ({
               id={result.symbol}
               key={uuidv4()}
               searchResult={result}
-              onPortfolioCreate={onPortfolioCreate}
+              onPortfolioCreate={onFavoriteCreate}
             />
           );
         })
